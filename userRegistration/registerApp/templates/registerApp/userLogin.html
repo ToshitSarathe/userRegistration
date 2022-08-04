@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up!</title>
+  </head>
+  <body>
+    <h1>Sign up here !!</h1>
+    {% if messages %}
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    <form action="/login/" method="post">
+      {% csrf_token %}
+      <label for="username">User Name :</label>
+      <input type="text" name="username" placeholder="Enter username" required="True">
+      <br><br>
+      <label for="pass1">Password :</label>
+      <input type="password" name="pass1" placeholder="Enter" required="True">
+      <br><br>
+      <!-- <a href="{% url 'registerApp:register' %}"><input type="submit" value="Submit!"></a> -->
+      <input type="submit" value="Submit!">
+
+    </form>
+  </body>
+</html>

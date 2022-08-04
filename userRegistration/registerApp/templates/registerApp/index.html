@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>This is the home page</h1>
+    {% if messages %}
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    {% if user.is_authenticated %}
+      <h2>Hello {{username}}</h2>
+      <a href="{% url 'registerApp:logout' %}"><input type="submit" name="logout" value="Log Out!"></a>
+    {% else %}
+    <a href="{% url 'registerApp:register' %}"><input type="submit" name="register" value="Sign Up!"></a>
+    <a href="{% url 'registerApp:login' %}"><input type="submit" name="login" value="Log In!"></a>
+    {% endif %}
+  </body>
+</html>

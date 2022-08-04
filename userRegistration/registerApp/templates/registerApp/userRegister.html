@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up!</title>
+  </head>
+  <body>
+    <h1>Sign up here !!</h1>
+    <form action="/register/" method="post">
+      {% csrf_token %}
+      <label for="username">User Name :</label>
+      <input type="text" name="username" placeholder="Enter desired username" required="True">
+      <br><br>
+      <label for="fname">First Name :</label>
+      <input type="text" name="fname" placeholder="Enter First Name" required="True">
+      <br><br>
+      <label for="lname">Last Name :</label>
+      <input type="text" name="lname" placeholder="Enter Last Name" required="True">
+      <br><br>
+      <label for="email">Email id :</label>
+      <input type="email" name="email" placeholder="Enter Email Id" required="True">
+      <br><br>
+      <label for="pass1">Password :</label>
+      <input type="password" name="pass1" placeholder="Enter" required="True">
+      <br><br>
+      <!-- <a href="{% url 'registerApp:register' %}"><input type="submit" value="Submit!"></a> -->
+      <input type="submit" value="Submit!">
+
+    </form>
+  </body>
+</html>
